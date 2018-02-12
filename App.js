@@ -1,17 +1,12 @@
 import React, { Component } from 'react';
 import { AppRegistry, SectionList, StyleSheet, Text, View } from 'react-native';
-import Index from './src/containers/index';
+import StackNavigator from './src/containers/index';
 
-export default class SectionListBasics extends Component {
+export default class App extends Component {
   render() {
     return (
-      <View>
-          <Index/>
-      </View>
+        <StackNavigator/>
     );
   }
 }
 
-
-// skip this line if using Create React Native App
-// AppRegistry.registerComponent('AwesomeProject', () => SectionListBasics);

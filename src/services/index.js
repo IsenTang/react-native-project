@@ -1,7 +1,4 @@
-import { combineReducers } from 'redux';
-
-
-
-const rootReducer = combineReducers({});
-
-export default rootReducer;
+import demo from './demo';
+module.exports = {
+    demo
+};

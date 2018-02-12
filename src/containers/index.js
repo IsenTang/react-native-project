@@ -1,17 +1,17 @@
-import {NativeRouter, Route, Link} from 'react-router-native'
-import {View,Text} from 'react-native';
+import React, { Component } from 'react';
+import SectionListBasics from '../components/test';
+import { StackNavigator } from 'react-navigation';
 
 
 
-
-export default class Index extends Component {
-    render() {
-        return (
-            <NativeRouter>
-                <View>
-                    <Route path='/' component={}/>
-                </View>
-            </NativeRouter>
-        )
+export default StackNavigator(
+    {
+        Home: {
+            screen: SectionListBasics,
+        }
+    },
+    {
+        initialRouteName: 'Home',
     }
-}
+);
+
