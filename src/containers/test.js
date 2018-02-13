@@ -1,30 +1,68 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
-import {View,Text} from 'react-native';
+import { connect } from 'react-redux';
+import { View, Text } from 'react-native';
+import PropTypes from 'prop-types';
 
+import LanButton from '../components/button/lanButton';
+import { demo } from '../actions';
+import { persistor } from '../store/store';
+import i18n from '../config/i18n';
+
+import styles from './testStyles';
 
 
 class TestBasics extends Component {
+    static propTypes = {
+      dispatch: PropTypes.func.isRequired,
+      navigation: PropTypes.object.isRequired,
+      demo: PropTypes.object,
+      test: PropTypes.object,
+    };
+
+    static get defaultProps() {
+      return {
+        demo: {},
+        test: {},
+      };
+    }
+
+
+    onPress = () => {
+      this.props.dispatch(demo.demoAction());
+    }
+
+    clear = async () => {
+      await persistor.purge();
+    }
+
+    next = () => {
+      this.props.navigation.navigate('Language');
+    }
+
     render() {
-        return(
-            <View style={{flex: 1, flexDirection: 'row'}}>
-                <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
-                <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
-                <View style={{width: 50, height: 50, backgroundColor: 'steelblue'}} />
-            </View>
-        )
+      return (
+        <View style={styles}>
+          <LanButton onPress={this.onPress} title="test persist" />
+          <Text>{this.props.demo.demoTest}</Text>
+          <Text>{this.props.test.testDemo}</Text>
+          <LanButton onPress={this.clear} title="test purge" />
+          <LanButton onPress={this.next} title="next" />
+          <Text>{i18n.t('home.greeting')}</Text>
+        </View>
+      );
     }
 }
 
+
 function mapStateToProps(state) {
-    return { state };
+  return {
+    demo: state.demo,
+    test: state.test,
+  };
 }
 
 function mapDispatchToProps(dispatch) {
-    return { dispatch };
+  return { dispatch };
 }
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(TestBasics)
+export default connect(mapStateToProps, mapDispatchToProps)(TestBasics);

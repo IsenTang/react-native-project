@@ -1,19 +1,28 @@
-import { createStore } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import { persistStore, persistReducer } from 'redux-persist';
+import thunk from 'redux-thunk';/* allows you to write action creators that return a function instead of an action */
+
+
 import storage from 'redux-persist/lib/storage';
-import rootReducer from './reducers';
+import rootReducer from '../reducers';
 
 
 const persistConfig = {
-    key: 'ricepo',
-    storage,
-}
+  key: 'ricepo',
+  storage,
+  whitelist: ['demo'], /* white list only element in array will be persisted */
+};
+
+/* redux persist */
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 
-const persistedReducer = persistReducer(persistConfig, rootReducer)
+const store = createStore(persistedReducer, /* preloadedState, */compose(applyMiddleware(thunk)));
 
-export default () => {
-  let store = createStore(persistedReducer)
-  let persistor = persistStore(store)
-  return { store, persistor }
-}
+
+const persistor = persistStore(store);
+
+module.exports = {
+  store,
+  persistor,
+};

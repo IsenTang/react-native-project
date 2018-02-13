@@ -1,1 +1,0 @@
-export const SELECT_RESTAURANT = "[1] save the selected restaurant";

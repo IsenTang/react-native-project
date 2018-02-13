@@ -1,17 +1,19 @@
-import React, { Component } from 'react';
-import SectionListBasics from '../components/test';
 import { StackNavigator } from 'react-navigation';
-
+import TestBasics from '../containers/test';
+import LanguageBasics from '../containers/language';
 
 
 export default StackNavigator(
-    {
-        Home: {
-            screen: SectionListBasics,
-        }
+  {
+    Home: {
+      screen: TestBasics,
     },
-    {
-        initialRouteName: 'Home',
-    }
+    Language: {
+      screen: LanguageBasics,
+    },
+  },
+  {
+    initialRouteName: 'Home',
+  },
 );
 
