@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
+import I18n from 'ex-react-native-i18n';
+
 
 import LanButton from '../components/button/lanButton';
-import { demo } from '../actions';
 import { persistor } from '../store/store';
 
 import styles from './testStyles';
@@ -23,7 +24,8 @@ class LanguageBasics extends Component {
 
 
     onPress = (data) => {
-      console.log(data);
+      I18n.locale = data;
+      this.props.navigation.navigate('Home');
     }
 
     clear = async () => {
@@ -31,16 +33,17 @@ class LanguageBasics extends Component {
     }
 
     next = () => {
-      this.props.navigation.navigate('Language');
+      this.props.navigation.navigate('Pic');
     }
 
     render() {
       return (
         <View style={styles}>
-          <LanButton onPress={() => this.onPress(0)} title="简体中文" />
-          <LanButton onPress={() => this.onPress(1)} title="繁体中文" />
-          <LanButton onPress={() => this.onPress(2)} title="English" />
+          <LanButton onPress={() => this.onPress('zh')} title="简体中文" />
+          <LanButton onPress={() => this.onPress('zh')} title="繁体中文" />
+          <LanButton onPress={() => this.onPress('en')} title="English" />
           <LanButton onPress={this.next} title="next" />
+          <Text>{I18n.t('home.greeting')}</Text>
         </View>
       );
     }

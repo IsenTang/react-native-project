@@ -42,6 +42,7 @@ class TestBasics extends Component {
     render() {
       return (
         <View style={styles}>
+
           <LanButton onPress={this.onPress} title="test persist" />
           <Text>{this.props.demo.demoTest}</Text>
           <Text>{this.props.test.testDemo}</Text>

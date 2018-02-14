@@ -1,5 +1,5 @@
 export default {
   home: {
-    greeting: 'Greeting in zh',
+    greeting: '你好！',
   },
 };
