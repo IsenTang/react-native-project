@@ -64,13 +64,9 @@ class PicBasics extends Component {
     }
 
     change =() => {
-      Animated.timing(
-        this.state.circle, // The animated value to drive
-        {
-          toValue: rectangle, // Animate to opacity: 1 (opaque)
-          duration: 10000, // Make it take a while
-        },
-      );
+      this.setState({
+        circle: rectangle,
+      });
     }
     render() {
       return (
