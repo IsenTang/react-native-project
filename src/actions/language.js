@@ -9,6 +9,6 @@ export function changeLanguageAction(data) {
 
 export function demoAction2() {
   return async (dispatch) => {
-    dispatch({ type: ActionType.DEMO_TYPE1 });
+    dispatch({ type: ActionType.CHANGE_LANGUAGE_SUCCESS });
   };
 }
