@@ -1,2 +1,4 @@
-export const DEMO_TYPE1 = 'DEMO_TYPE1';
-export const DEMO_TYPE2 = 'DEMO_TYPE2';
+/* Lauguage */
+export const CHANGE_LANGUAGE = 'CHANGE_LANGUAGE';
+export const CHANGE_LANGUAGE_SUCCESS = 'CHANGE_LANGUAGE_SUCCESS';
+

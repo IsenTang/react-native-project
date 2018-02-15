@@ -1,9 +1,10 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-  buttonStyle: {
-    width: 200,
-    alignSelf: 'center',
+  layoutStyle: {
+    flex: 1,
+    flexDirection: 'column',
+    alignItems: 'center',
     justifyContent: 'center',
   },
 });

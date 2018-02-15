@@ -1,6 +1,6 @@
-import * as demo from './demo';
+import * as language from './language';
 
 module.exports = {
-  demo,
+  language,
 };
 

@@ -10,7 +10,7 @@ import rootReducer from '../reducers';
 const persistConfig = {
   key: 'ricepo',
   storage,
-  whitelist: ['demo'], /* white list only element in array will be persisted */
+  whitelist: ['language'], /* white list only element in array will be persisted */
 };
 
 /* redux persist */

@@ -1,15 +1,14 @@
 import * as ActionType from './actionsType';
 
-export function demoAction() {
+
+export function changeLanguageAction(data) {
   return async (dispatch) => {
-    dispatch({ type: ActionType.DEMO_TYPE1 });
-    dispatch({ type: ActionType.DEMO_TYPE2 });
+    dispatch({ type: ActionType.CHANGE_LANGUAGE, language: data });
   };
 }
 
 export function demoAction2() {
   return async (dispatch) => {
     dispatch({ type: ActionType.DEMO_TYPE1 });
-    dispatch({ type: ActionType.DEMO_TYPE2 });
   };
 }

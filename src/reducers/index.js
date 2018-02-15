@@ -1,7 +1,6 @@
 import { combineReducers } from 'redux';
-import demo from './demo';
-import demo2 from './demo2';
+import language from './language';
 
-const rootReducer = combineReducers({ demo, demo2 });
+const rootReducer = combineReducers({ language });
 
 export default rootReducer;

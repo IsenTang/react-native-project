@@ -2,7 +2,7 @@ import React from 'react';
 import sinon from 'sinon';
 import { shallow } from 'enzyme';
 
-import Lanbutton from '../../../src/components/button/lanButton';
+import Lanbutton from '../../../src/components/button/LanButton';
 
 describe('rendering', () => {
   let wrapper;

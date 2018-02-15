@@ -1,18 +1,12 @@
 import { StackNavigator } from 'react-navigation';
-import TestBasics from '../containers/demo';
-import LanguageBasics from '../containers/language';
-import PicBasics from '../containers/pic';
+
+import LanguagePage from '../containers/LauguagePage/Language';
+
 import refactorRouters from '../utils/refactorRouters';
 
 const router = {
   Home: {
-    screen: TestBasics,
-  },
-  Language: {
-    screen: LanguageBasics,
-  },
-  Pic: {
-    screen: PicBasics,
+    screen: LanguagePage,
   },
 };
 
