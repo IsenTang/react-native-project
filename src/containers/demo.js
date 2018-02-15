@@ -16,13 +16,13 @@ class TestBasics extends Component {
       dispatch: PropTypes.func.isRequired,
       navigation: PropTypes.object.isRequired,
       demo: PropTypes.object,
-      test: PropTypes.object,
+      demo2: PropTypes.object,
     };
 
     static get defaultProps() {
       return {
         demo: {},
-        test: {},
+        demo2: {},
       };
     }
 
@@ -45,7 +45,7 @@ class TestBasics extends Component {
 
           <LanButton onPress={this.onPress} title="test persist" />
           <Text>{this.props.demo.demoTest}</Text>
-          <Text>{this.props.test.testDemo}</Text>
+          <Text>{this.props.demo2.testDemo}</Text>
           <LanButton onPress={this.clear} title="test purge" />
           <LanButton onPress={this.next} title="next" />
           <Text>{i18n.t('home.greeting')}</Text>
@@ -58,7 +58,7 @@ class TestBasics extends Component {
 function mapStateToProps(state) {
   return {
     demo: state.demo,
-    test: state.test,
+    demo2: state.demo2,
   };
 }
 

@@ -53,7 +53,7 @@ class LanguageBasics extends Component {
 function mapStateToProps(state) {
   return {
     demo: state.demo,
-    test: state.test,
+    test: state.demo2,
   };
 }
 

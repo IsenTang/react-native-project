@@ -1,20 +1,24 @@
 import { StackNavigator } from 'react-navigation';
-import TestBasics from '../containers/test';
+import TestBasics from '../containers/demo';
 import LanguageBasics from '../containers/language';
 import PicBasics from '../containers/pic';
+import refactorRouters from '../utils/refactorRouters';
+
+const router = {
+  Home: {
+    screen: TestBasics,
+  },
+  Language: {
+    screen: LanguageBasics,
+  },
+  Pic: {
+    screen: PicBasics,
+  },
+};
+
 
 export default StackNavigator(
-  {
-    Home: {
-      screen: TestBasics,
-    },
-    Language: {
-      screen: LanguageBasics,
-    },
-    Pic: {
-      screen: PicBasics,
-    },
-  },
+  refactorRouters(router),
   {
     initialRouteName: 'Home',
     // mode: 'modal',

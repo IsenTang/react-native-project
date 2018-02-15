@@ -8,12 +8,15 @@
     "eject": "react-native-scripts eject",
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
-    "test": "node node_modules/jest/bin/jest.js",
-    "remotedev": "remotedev --hostname=localhost --port=8000",
+    "test": "node node_modules/.bin/jest",
     "lint": "eslint --ext .js ./src --fix"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "jest-expo",
+    "setupTestFrameworkScriptFile": "./tests/setup.js",
+    "transformIgnorePatterns": [
+      "node_modules/?!(react-native|native-base)"
+    ]
   },
   "dependencies": {
     "apsl-react-native-button": "^3.1.0",
@@ -36,17 +39,18 @@
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
     "redux-persist": "^5.7.0",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "sinon": "^4.3.0"
   },
   "devDependencies": {
     "ava": "^0.25.0",
     "babel-eslint": "^8.2.1",
-    "chai": "^4.1.2",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.17.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jest": "^21.12.1",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.6.1",
     "eslint-plugin-react-native": "^3.2.1",

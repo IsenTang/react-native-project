@@ -5,10 +5,12 @@
         "es6": true 
     },
     "parser": "babel-eslint", 
-    "extends": "airbnb",
+    "extends": ["plugin:jest/recommended","airbnb"],
     "rules": {
         "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }],
         "eslint react/prop-types": 0,
-        "react/forbid-prop-types": ["enabled", { "forbid": ["string"] }]
-    }
+        "react/forbid-prop-types": ["enabled"],
+        "no-param-reassign": [2, {"props": false}]
+    },
+    "plugins": ["jest"]
 }
